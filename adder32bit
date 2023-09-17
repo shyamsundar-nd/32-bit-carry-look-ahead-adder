@@ -1,0 +1,9 @@
+module adder32bit(a,b, cin, sum,cout);
+input [31:0] a,b;
+input cin;
+output [31:0] sum;
+output cout;
+wire C1;
+adder16bit cla1 (.a(a[15:0]), .b(b[15:0]), .cin(cin), .sum(sum[15:0]), .cout(C1));
+Adder16bit cla2 (.a(a[31:16]), .b(b[31:16]), .cin(C1), .sum(sum[31:16]), .cout(cout));
+endmodule
